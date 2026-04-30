@@ -9,6 +9,9 @@ import os
 import pickle
 
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "random_forest.pkl")
+DATA_PATH  = os.path.join(BASE_DIR, "data", "processed", "final_dataset.csv")
 st.set_page_config(
     page_title="RISC-V Fault Detection",
     page_icon="🔬",
@@ -656,10 +659,7 @@ elif page == "📋 Project Info":
         </div>
         """, unsafe_allow_html=True)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-MODEL_PATH = os.path.join(BASE_DIR, "models", "random_forest.pkl")
-DATA_PATH  = os.path.join(BASE_DIR, "data", "processed", "final_dataset.csv")
 with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
 
