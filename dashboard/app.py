@@ -651,9 +651,9 @@ elif page == "📋 Project Info":
         <div style='color:#94a3b8; font-size:12px; margin-top:4px;'>{desc}</div>
         </div>
         """, unsafe_allow_html=True)
-        import os
+import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 model_path = os.path.join(BASE_DIR, "models", "random_forest.pkl")
 data_path = os.path.join(BASE_DIR, "data", "processed", "final_dataset.csv")
